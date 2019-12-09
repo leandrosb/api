@@ -1,23 +1,25 @@
 from microbot.restplus import api
 from flask_restplus import Resource
-
+from microbot.models.category import Category
 import microbot.controllers.category as controllers
+
 ns_category = api.namespace('category', description='Endpoints of categories')
+category = Category()
 
 
 @ns_category.route('/')
-class HealthCheck(Resource):
+class CategoryManager(Resource):
 
     def get(self):
         """
         list categories
         """
-        return {'status': 'Ok'}, 200
+        return category._categories, 200
 
     @api.expect(controllers.category_create_model)
     def post(self):
         """
         Create new category
         """
-        print(api.payload)
-        return {'status': 'Categoria cadastrada com sucesso.'}, 201
+        result = category.create_category(api.payload)
+        return result, 201
