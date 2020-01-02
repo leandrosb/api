@@ -22,7 +22,8 @@ def initialize_app(app):
 def main():
     initialize_app(app)
     port = int(os.environ.get("PORT", 5000))
-    serve(app, host='0.0.0.0', port=port, threads=os.getenv("APP_THREADS", 1))
+    serve(app, host='0.0.0.0', port=port, threads=os.getenv("APP_THREADS",
+          default=1))
 
 
 if __name__ == '__main__':
