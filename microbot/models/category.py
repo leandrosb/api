@@ -7,9 +7,9 @@ class Category:
         self._categories = []
         self._id = len(self._categories)
 
-    def get_category(self, id):
+    def get_category(self, iid):
         for todo in self._categories:
-            if todo['id'] == id:
+            if todo['id'] == iid:
                 return todo
             api.abort(404, "Category {} doesn't exist ".format(id))
 
