@@ -10,7 +10,7 @@ category = Category()
 @ns_category.route('/')
 class CategoryManager(Resource):
 
-    def get_category(self):
+    def get_list_category(self):
         """
         list categories
         """
