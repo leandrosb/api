@@ -1,0 +1,8 @@
+[run]
+source = microbot
+omit =
+    microbot/__init__.py
+    microbot/__main__.py
+    microbot/controllers/__init__.py
+    microbot/models/__init__.py
+    microbot/views/__init__.py
