@@ -7,6 +7,7 @@ class Category:
         self._categories = []
         self._id = len(self._categories)
 
+    @staticmethod
     def get(self, id):
         for todo in self._categories:
             if todo['id'] == id:

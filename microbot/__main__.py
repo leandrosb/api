@@ -23,8 +23,7 @@ def main():
     initialize_app(app_flask)
     port = int(os.environ.get("PORT", 5000))
     serve(app_flask, host='0.0.0.0', port=port,
-          threads=int(os.getenv("APP_THREADS",
-                      default=1)))
+          threads=int(os.getenv("APP_THREADS", default=1)))
 
 
 if __name__ == '__main__':
