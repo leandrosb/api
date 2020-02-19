@@ -15,7 +15,7 @@ class CategoryManager(Resource):
         """
         list categories
         """
-        list_categories = category._categories
+        list_categories = category.list_categories
         return list_categories, 200
 
     @api.expect(controllers.category_create_model)

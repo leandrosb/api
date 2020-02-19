@@ -13,6 +13,9 @@ class Category:
                 return todo
             api.abort(404, "Category {} doesn't exist ".format(id))
 
+    def list_categories(self):
+        return self._categories
+
     def create_category(self, data) -> list:
         todo = data
         todo['id'] = self._id = self._id + 1
