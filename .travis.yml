@@ -1,17 +1,7 @@
 dist: trusty
 language: python
 python:
-  - "3.8"
+  - "3.7"
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-addons:
-  sonarcloud:
-    organization: "leandrosb"
-    token:
-      secure: "ylVbJYeFVvTYEUDHSqhMK4X0fYYjnN/rOprsMpeeJ4eresU1n4gEqOPfkjbJY3lyxGWzhGZRXn0WqDa601fLon/NtcluC+MOgXJQGA1dwda3MqAKUJD3+5Yi6c/TmzlAFSlMbCBxAuKUUNdDG7Q8ZX7hUP8/Qt7g46lDFr7IR8ui0XjW75fzOYZs4FQBKdqZw360MJYx48duTIcBhspQJKbBOu2ozuM0144+n0ECbfddM41v9ty6Oq9c/Iwk9Xh8WpAqjeQrhziCcilpa/zOwQ2pr+KZ7lQ4gB+9exrE02eRtTwrLb7n24f5EztbtercLo2ZfNpVM+INH/aUi2g8GF55pNA+qzv7eRksdEif1f9clCdXgsbDXOIkHiSpbrZ0dsNsTFyYj/yTWxMJJXqVBXNvANAvFZQMc17VQx9uA1DNFLRgqpG6MIZ6lAl/Fj69kXZZ0/rjVes6kPpVTxGnyGdP6Ohh7OBjRhn9kflqw3kPuUVekuNTCVVaRGOZJ8syhGLdV1ixMLg9x03gna9e4jkeS5aMMfZCaW+ehRPYBFBdwtK5uNnHg8604oKWCVEYz1btiGPNzLputar26MC5hTaQrOyvyJ/p1guv7dC9eSRf+vfaFwHf/7VrbrTFfs1IwvMm24oZD7AksVR/YKNRcTbqOFmlhAvzoxpAwktp9g0="
-script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - sonar-scanner
-
-
