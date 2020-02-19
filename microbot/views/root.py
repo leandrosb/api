@@ -6,6 +6,7 @@ ns_root = api.namespace('/', description='Endpoints root')
 @ns_root.route('/healthz')
 class HealthCheck(Resource):
 
+    @staticmethod
     def get(self):
         """
         Chamada para verificar status da aplicacao
