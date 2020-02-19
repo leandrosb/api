@@ -5,7 +5,7 @@ from microbot.restplus import api
 from microbot.views.root import ns_root
 from microbot.views.category import ns_category
 
-app = Flask(__name__)
+app_flask = Flask(__name__)
 
 
 def initialize_app(app):
@@ -20,10 +20,11 @@ def initialize_app(app):
 
 
 def main():
-    initialize_app(app)
+    initialize_app(app_flask)
     port = int(os.environ.get("PORT", 5000))
-    serve(app, host='0.0.0.0', port=port, threads=int(os.getenv("APP_THREADS",
-          default=1)))
+    serve(app_flask, host='0.0.0.0', port=port,
+          threads=int(os.getenv("APP_THREADS",
+                      default=1)))
 
 
 if __name__ == '__main__':
