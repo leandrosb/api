@@ -1,22 +1,8 @@
 from microbot.restplus import api
+from flask_restplus import fields
 
-category_create_model = api.schema_model("Categories", {
-    "properties": {
-        "id": {
-            "type": "integer",
-            "description": "id da categoria"
-        },
-        "name": {
-            "type": "string",
-            "description": "name para o portal"
-        },
-        "status": {
-            "type": "string",
-            "enum": ["active", "inactive"],
-            "description": "Status da categoria: active ou inactive"
-        }
-    },
-    "type": "object",
-    "additionalProperties": False,
-    "required": ["id", "name", "status"]
-})
+category_read_model = api.model('Categories', {
+    'id': fields.Integer,
+    'name': fields.String,
+    'status': fields.String(default='Desabilitado'),
+}, mask='{name}')
