@@ -7,7 +7,7 @@ class Category:
         self._categories = []
         self._id = len(self._categories)
 
-    def get_category(self, iid):
+    def get(self, iid):
         for todo in self._categories:
             if todo['id'] == iid:
                 return todo
@@ -16,8 +16,12 @@ class Category:
     def list_categories(self):
         return self._categories
 
-    def create_category(self, data) -> list:
+    def create(self, data) -> list:
         todo = data
         todo['id'] = self._id = self._id + 1
         self._categories.append(todo)
         return todo
+
+    def delete(self, iid):
+        todo = self.get(iid)
+        self._categories.remove(todo)
