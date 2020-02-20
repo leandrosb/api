@@ -10,7 +10,7 @@ category = Category()
 @ns_category.route('/')
 class CategoryManager(Resource):
     @staticmethod
-    def get_list_category(self):
+    def get_list_category():
         """
         list categories
         """
@@ -19,7 +19,7 @@ class CategoryManager(Resource):
 
     @api.expect(controllers.category_create_model)
     @staticmethod
-    def post_category(self):
+    def post_category():
         """
         Create new category
         """
