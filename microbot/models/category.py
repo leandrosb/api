@@ -6,7 +6,7 @@ class Category:
 
     def __init__(self):
         self._categories = []
-        self._id = 0
+        self._id = len(self._categories)
 
     def get(self, iid: int):
         """ Method get """
