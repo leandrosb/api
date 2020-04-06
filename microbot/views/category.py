@@ -9,19 +9,19 @@ model_category = controllers.category_read_model
 
 
 @ns_category.route('/')
-class CategoryManager(Resource):
-
+class CategoryList(Resource):
+    '''Shows a list of all categories, and lets you POST to add new category'''
     @ns_category.doc('List_Categories')
     @ns_category.marshal_with(model_category)
     def get(self):
         """
         list categories
         """
-        return category.list_categories
+        return category.list_categories()
 
     @ns_category.doc('create_Categories')
     @ns_category.expect(model_category)
-    @ns_category.marshal_with(model_category, code=201)
+    @ns_category.marshal_with(model_category, 201)
     def post(self):
         """
         Create new category

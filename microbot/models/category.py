@@ -6,7 +6,7 @@ class Category:
 
     def __init__(self):
         self._categories = []
-        self._id = len(self._categories)
+        self._id = 0
 
     def get(self, iid: int):
         """ Method get """
@@ -22,6 +22,7 @@ class Category:
     def create(self, data: list):
         """ Method create categories """
         data['id'] = self._id = self._id + 1
+        print(data)
         self._categories.append(data)
 
     def delete(self, iid: int):
