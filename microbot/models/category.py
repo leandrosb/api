@@ -27,5 +27,11 @@ class Category:
 
     def delete(self, iid: int):
         """ Method Delete categories """
-        todo = self.get(iid)
-        self._categories.remove(todo)
+        item = self.get(iid)
+        self._categories.remove(item)
+
+    def update(self, iid: int, data: list):
+        """ Method update category """
+        item = self.get(iid)
+        item.update(data)
+        return item

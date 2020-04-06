@@ -41,3 +41,20 @@ class CategoryField(Resource):
         return one category
         """
         return category.get(id)
+
+    @ns_category.doc('delete_category')
+    @ns_category.response(204, 'Category deleted')
+    def delete(self, id):
+        """
+        Delete category
+        """
+        category.delete(id)
+        return '', 204
+
+    @ns_category.expect(model_category)
+    @ns_category.marshal_with(model_category)
+    def put(self, id):
+        """
+        Update category
+        """
+        return category.update(id, api.payload)
