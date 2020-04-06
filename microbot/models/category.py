@@ -13,7 +13,7 @@ class Category:
         for item in self._categories:
             if item['id'] == iid:
                 return item
-            api.abort(404, "Category {} doesn't exist ".format(id))
+        api.abort(404, "Category {} doesn't exist ".format(iid))
 
     def list_categories(self):
         """ Method List categories """
