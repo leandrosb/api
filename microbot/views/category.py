@@ -36,25 +36,25 @@ class CategoryField(Resource):
     """ Show a single category and delete """
     @ns_category.doc('get_category')
     @ns_category.marshal_with(model_category)
-    def get(self, id):
+    def get(self, iid):
         """
         return one category
         """
-        return category.get(id)
+        return category.get(iid)
 
     @ns_category.doc('delete_category')
     @ns_category.response(204, 'Category deleted')
-    def delete(self, id):
+    def delete(self, iid):
         """
         Delete category
         """
-        category.delete(id)
+        category.delete(iid)
         return '', 204
 
     @ns_category.expect(model_category)
     @ns_category.marshal_with(model_category)
-    def put(self, id):
+    def put(self, iid):
         """
         Update category
         """
-        return category.update(id, api.payload)
+        return category.update(iid, api.payload)
